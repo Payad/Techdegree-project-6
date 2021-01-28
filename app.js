@@ -47,9 +47,21 @@ getRandomPhraseAsArray(phrases);
 //function that adds letters of phrase to display
 function addPhraseToDisplay(arr) {
    for (let i = 0; i < arr.length; i += 1) {
-       const list = arr.array[i];
-    list = document.createElement('li');
-    document.getElementsByClassName('letter').appendChild('ul#phrase > li');
+       let li = document.createElement('li');
+       const isLetter = "abcdefghijklmnopqrstuvwxyz";
+       if (isLetter) {
+        isLetter.appendChild('li').addClassName('letter');
+       } else {
+           isLetter.appendChild('li').addClassName('space');
+       }
+       
+       let arr = ul.appendChild('#phrase > li').innerHTML;
+       
+    //    arr.appendChild('#phrase');
+       
+    //    const list = arr.array[i];
+    // list = document.createElement('li');
+    // document.getElementsByClassName('letter').appendChild('ul#phrase > li');
    
     // li.appendChild('ul#phrase');
 
@@ -62,14 +74,14 @@ function addPhraseToDisplay(arr) {
 
 }
 
-const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray);
+// const phraseArray = getRandomPhraseAsArray(phrases);
+// addPhraseToDisplay(phraseArray);
 
 //function that checks for letter in phrase
-const checkLetter = button => {
-const li = document.getElementsByTagName('li');
+// const checkLetter = button => {
+// const li = document.getElementsByTagName('li');
 // const match = document.createElement('match');
-let match = null;
+// let match = null;
 
 // for (let i = 0; i < li.length; i += 1) {
 // if (match) {
@@ -78,19 +90,19 @@ let match = null;
 // }
 // }
 // return match;
-};
+// };
 
-qwerty.addEventListener('click', (e) => {
+// qwerty.addEventListener('click', (e) => {
     // let click = button.filter(function(btn_reset) {
     //     return click;
-    });
+    // });
     // checkLetter(match.value);
 
 
 //function that checks if game has been won or lost
-const checkWin = () => {
+// const checkWin = () => {
 
-};
+// };
 
 
-}
+
