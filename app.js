@@ -47,15 +47,24 @@ getRandomPhraseAsArray(phrases);
 //function that adds letters of phrase to display
 function addPhraseToDisplay(arr) {
    for (let i = 0; i < arr.length; i += 1) {
+       let ul = document.createElement('ul');
        let li = document.createElement('li');
-       const isLetter = "abcdefghijklmnopqrstuvwxyz";
-       if (isLetter) {
-        isLetter.appendChild('li').addClassName('letter');
-       } else {
-           isLetter.appendChild('li').addClassName('space');
-       }
+        ul.appendChild(li);
+        li.textContent = arr[i];
+            if (arr[i] === '') {
+                addPhraseToDisplay(arr[i] = 'letter').toUpperCase();
+            } else {
+                addPhraseToDisplay(arr[i] = 'space')
+            }
+    //    let li = document.createElement('li');
+    //    const isLetter = "abcdefghijklmnopqrstuvwxyz";
+    //    if (isLetter) {
+    //     isLetter.appendChild('li').addClassName('letter');
+    //    } else {
+    //        isLetter.appendChild('li').addClassName('space');
+    //    }
        
-       let arr = ul.appendChild('#phrase > li').innerHTML;
+    //    let arr = ul.appendChild('#phrase > li').innerHTML;
        
     //    arr.appendChild('#phrase');
        
