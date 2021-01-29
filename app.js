@@ -46,52 +46,40 @@ getRandomPhraseAsArray(phrases);
 
 //function that adds letters of phrase to display
 function addPhraseToDisplay(arr) {
+    console.log(arr);
+    const ul = document.querySelector('#phrase ul');
    for (let i = 0; i < arr.length; i += 1) {
-       let ul = document.createElement('ul');
        let li = document.createElement('li');
-        ul.appendChild(li);
-        li.textContent = arr[i];
-            if (arr[i] === '') {
-                addPhraseToDisplay(arr[i] = 'letter').toUpperCase();
-            } else {
-                addPhraseToDisplay(arr[i] = 'space')
-            }
-    //    let li = document.createElement('li');
-    //    const isLetter = "abcdefghijklmnopqrstuvwxyz";
-    //    if (isLetter) {
-    //     isLetter.appendChild('li').addClassName('letter');
-    //    } else {
-    //        isLetter.appendChild('li').addClassName('space');
-    //    }
-       
-    //    let arr = ul.appendChild('#phrase > li').innerHTML;
-       
-    //    arr.appendChild('#phrase');
-       
-    //    const list = arr.array[i];
-    // list = document.createElement('li');
-    // document.getElementsByClassName('letter').appendChild('ul#phrase > li');
-   
-    // li.appendChild('ul#phrase');
-
-    // if (isLetter) {
-    //     phrases[i].addItemInput.value;
-    // } else {
-    //     display = 'space';
-    // }
-   }
-
+       ul.appendChild(li);
+       li.textContent = arr[i];
+        if (arr[i] === '') {
+            li.className = 'space';
+        } else {
+            li.className = 'letter';
+        }
+    }
 }
+  
+    // const randomPhrase = getRandomPhraseAsArray(phrases);
+    // addPhraseToDisplay(randomPhrase);
 
-// const phraseArray = getRandomPhraseAsArray(phrases);
-// addPhraseToDisplay(phraseArray);
 
-//function that checks for letter in phrase
-// const checkLetter = button => {
+const phraseArray = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(phraseArray);
+
+***// function that checks for letter in phrase
+function checkLetter(button) {
+    button.addEventListener('click', (e) => {});
+
+// const checkLetter = button ('click', (e) {
 // const li = document.getElementsByTagName('li');
 // const match = document.createElement('match');
 // let match = null;
+// }
 
+
+
+// }
 // for (let i = 0; i < li.length; i += 1) {
 // if (match) {
 //     li.style.display = 'show';
