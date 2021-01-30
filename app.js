@@ -67,15 +67,39 @@ function addPhraseToDisplay(arr) {
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-***// function that checks for letter in phrase
+// function that checks for letter in phrase
 function checkLetter(button) {
-    button.addEventListener('click', (e) => {});
-
+    button.addEventListener('click', (e) => {
+    const button = document.getElementsByClassName('letter');
+    const li = document.getElementsByTagName('li');
+    const isChecked = e.target.button;
+    const match = null;
+    for (let i = 0; i < button.length; i += 1) {
+        // const isChecked = e.target.checked;
+        if (isChecked === 'match') {
+            button.className = 'show';
+        } else {
+            button.className = 'null';
+        }
+    }
+    });
+    // const button = document.getElementsByClassName('letter');
+    // const li = document.getElementsByTagName('li');
+    // for (let i = 0; i < button.length; i += 1) {
+    //     const isChecked = e.target.checked;
+    //     if (isChecked === 'matched') {
+    //         button.className = 'show';
+    //     } else {
+    //         button.className = '';
+    //     }
+    // }
 // const checkLetter = button ('click', (e) {
 // const li = document.getElementsByTagName('li');
 // const match = document.createElement('match');
 // let match = null;
 // }
+}
+
 
 
 
