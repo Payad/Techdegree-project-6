@@ -77,9 +77,9 @@ function checkLetter(button) {
     for (let i = 0; i < button.length; i += 1) {
         // const isChecked = e.target.checked;
         if (isChecked === 'match') {
-            button.className = 'show';
+            li.className = 'show';
         } else {
-            button.className = 'null';
+            li.className = 'null';
         }
     }
     });
