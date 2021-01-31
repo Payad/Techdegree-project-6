@@ -46,7 +46,7 @@ getRandomPhraseAsArray(phrases);
 
 //function that adds letters of phrase to display
 function addPhraseToDisplay(arr) {
-    console.log(arr);
+    // console.log(arr);
     const ul = document.querySelector('#phrase ul');
    for (let i = 0; i < arr.length; i += 1) {
        let li = document.createElement('li');
@@ -68,21 +68,78 @@ const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
 // function that checks for letter in phrase
-function checkLetter(button) {
-    button.addEventListener('click', (e) => {
-    const button = document.getElementsByClassName('letter');
-    const li = document.getElementsByTagName('li');
-    const isChecked = e.target.button;
-    const match = null;
-    for (let i = 0; i < button.length; i += 1) {
-        // const isChecked = e.target.checked;
-        if (isChecked === 'match') {
-            li.className = 'show';
-        } else {
-            li.className = 'null';
+
+// function checkLetter(button) {
+//     button.addEventListener('click', (e) => {
+//     const button = document.getElementsByClassName('letter');
+//     const li = document.getElementsByTagName('li');
+//     const isChecked = e.target.button;
+//     const match = null;
+
+
+    function checkLetter(qwertyButton) {
+        // console.log(qwertyButton);
+       
+        let li = document.getElementsByTagName = ('li');
+        let match = 'null';
+        // qwertyButton.addEventListener('click', (e) => {
+            for (let i = 0; i < qwertyButton.length; i += 1) {
+            if (qwertyButton === 'letter') {
+                qwertyButton[i].className = 'show';
+            } else {
+                qwertyButton[i].className = 'null';
+            }
+            if (qwertyButton === match) {
+                qwertyButton[i].textContent = 'match'
+            } else {
+                qwertyButton[i].textContent = '';
+            }
         }
+        // });
+        
     }
-    });
+
+    // function checkLetter(button) {
+    //     // console.log(button);
+    //     // const button = document.querySelector('button');
+
+    //     button.addEventListener('click', (e) => {
+
+    //     });
+
+
+    // for (let i = 0; i < button.length; i += 1) {
+    //     let button = document.getElementsByTagName('li');
+    //     button.appendChild(li);
+    //     button.textContent = button[i];
+    //     // const isChecked = e.target.checked;
+
+    //     if (button[i] === 'letter') {
+    //         button[i].className = 'show';
+    //     } else {
+    //         button[i].className = 'null';
+    //     }
+    
+
+        // if (button[i].matches('letter')) {
+        //     button[i].className = 'show';
+        // } else {
+        //     button[i].className = 'null';
+        // }
+
+        // if (isChecked === 'match') {
+        //     li.className = 'show';
+        // } else {
+        //     li.className = 'null';
+        // }
+    // }
+
+
+    // };
+
+
+
+
     // const button = document.getElementsByClassName('letter');
     // const li = document.getElementsByTagName('li');
     // for (let i = 0; i < button.length; i += 1) {
@@ -98,7 +155,7 @@ function checkLetter(button) {
 // const match = document.createElement('match');
 // let match = null;
 // }
-}
+
 
 
 
