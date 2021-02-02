@@ -71,7 +71,7 @@ addPhraseToDisplay(phraseArray);
 function checkLetter(qwertyButton) {
         // console.log(qwertyButton);
        
-        let li = document.getElementsByClassName = ('letter');
+        let li = document.getElementsByClassName('letter');
         let match = 'null';
         
             for (let i = 0; i < li.length; i += 1) {
