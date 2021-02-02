@@ -80,13 +80,14 @@ function checkLetter(qwertyButton) {
             } else
                 li[i].classList.add('null');
             }
-            li[i].textContent === match;
-            return match;
-            }
+            // li[i].textContent === match;
+            // return match;
+            // }
             //or
             // return li[i].textContent === match;
             const match = li[i].textContent;
             return match;
+}
         
 
             // const match = li[i].textContent(match);
