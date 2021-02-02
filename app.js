@@ -83,6 +83,13 @@ function checkLetter(qwertyButton) {
             li[i].textContent === match;
             return match;
             }
+            //or
+            // return li[i].textContent === match;
+            const match = li[i].textContent;
+            return match;
+        
+
+            // const match = li[i].textContent(match);
 
 // function that checks if button has been clicked
 qwerty.addEventListener('click', (e) => {
