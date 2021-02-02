@@ -67,120 +67,41 @@ function addPhraseToDisplay(arr) {
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-// function that checks for letter in phrase
-
-// function checkLetter(button) {
-//     button.addEventListener('click', (e) => {
-//     const button = document.getElementsByClassName('letter');
-//     const li = document.getElementsByTagName('li');
-//     const isChecked = e.target.button;
-//     const match = null;
-
-
-    function checkLetter(qwertyButton) {
+    
+function checkLetter(qwertyButton) {
         // console.log(qwertyButton);
        
-        let li = document.getElementsByTagName = ('li');
+        let li = document.getElementsByClassName = ('letter');
         let match = 'null';
         // qwertyButton.addEventListener('click', (e) => {
-            for (let i = 0; i < qwertyButton.length; i += 1) {
-            if (qwertyButton === 'letter') {
-                qwertyButton[i].className = 'show';
-            } else {
-                qwertyButton[i].className = 'null';
+            for (let i = 0; i < li.length; i += 1) {
+            if (li[i].textContent === qwertyButton) {
+                li[i].classList.add('show');
+            } else
+                li[i].classList.add('null');
             }
-            if (qwertyButton === match) {
-                qwertyButton[i].textContent = 'match'
-            } else {
-                qwertyButton[i].textContent = '';
+            li[i].textContent === match;
+            return match;
             }
-        }
-        // });
-        
-    }
 
-    // function checkLetter(button) {
-    //     // console.log(button);
-    //     // const button = document.querySelector('button');
-
-    //     button.addEventListener('click', (e) => {
-
-    //     });
-
-
-    // for (let i = 0; i < button.length; i += 1) {
-    //     let button = document.getElementsByTagName('li');
-    //     button.appendChild(li);
-    //     button.textContent = button[i];
-    //     // const isChecked = e.target.checked;
-
-    //     if (button[i] === 'letter') {
-    //         button[i].className = 'show';
-    //     } else {
-    //         button[i].className = 'null';
-    //     }
-    
-
-        // if (button[i].matches('letter')) {
-        //     button[i].className = 'show';
-        // } else {
-        //     button[i].className = 'null';
-        // }
-
-        // if (isChecked === 'match') {
-        //     li.className = 'show';
-        // } else {
-        //     li.className = 'null';
-        // }
-    // }
-
-
-    // };
-
-
-
-
-    // const button = document.getElementsByClassName('letter');
-    // const li = document.getElementsByTagName('li');
-    // for (let i = 0; i < button.length; i += 1) {
-    //     const isChecked = e.target.checked;
-    //     if (isChecked === 'matched') {
-    //         button.className = 'show';
-    //     } else {
-    //         button.className = '';
-    //     }
-    // }
-// const checkLetter = button ('click', (e) {
-// const li = document.getElementsByTagName('li');
-// const match = document.createElement('match');
-// let match = null;
-// }
-
-
-
-
-
-// }
-// for (let i = 0; i < li.length; i += 1) {
-// if (match) {
-//     li.style.display = 'show';
-//     li.button.textContent = 'match';
-// }
-// }
-// return match;
-// };
-
-// qwerty.addEventListener('click', (e) => {
+// function that checks if button has been clicked
+qwerty.addEventListener('click', (e) => {
     // let click = button.filter(function(btn_reset) {
-    //     return click;
+    //     // return click;
     // });
-    // checkLetter(match.value);
-
-
+    const qwertyButton = document.querySelector('#qwerty');
+    if ('click' !== qwertyButton) {
+        document.getElementById('qwerty').disabled = false;
+    } else {
+        document.getElementById('qwerty').disabled = true;
+        qwertyButton.classList.add('chosen');
+        // document.getElementById("myBtn").disabled = true;
+    }
+    // created a variable and put qButton as an arguement?
+    const letterFound = checkLetter(qwertyButton);
+    });
+    
 //function that checks if game has been won or lost
-// const checkWin = () => {
+// const checkWin = () => {}
 
-// };
-
-
-
+// 
