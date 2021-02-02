@@ -73,20 +73,26 @@ function checkLetter(qwertyButton) {
        
         let li = document.getElementsByClassName = ('letter');
         let match = 'null';
-        // qwertyButton.addEventListener('click', (e) => {
+        
             for (let i = 0; i < li.length; i += 1) {
             if (li[i].textContent === qwertyButton) {
                 li[i].classList.add('show');
-            } else
-                li[i].classList.add('null');
+                match += 1;
+            } else if (li[i].textContent !== qwertyButton) {
+                li[i].textContent.add('null');
+                letterFound = 'null';
+                match += 0;
             }
+                match = li[i].textContent;
+        }
+        return match;
             // li[i].textContent === match;
             // return match;
             // }
             //or
             // return li[i].textContent === match;
-            const match = li[i].textContent;
-            return match;
+            // const match = li[i].textContent;
+            // return match;
 }
         
 
@@ -98,16 +104,17 @@ qwerty.addEventListener('click', (e) => {
     //     // return click;
     // });
     const qwertyButton = document.querySelector('#qwerty');
-    if ('click' !== qwertyButton) {
+    if (e.target.tagName === 'qwertyButton') {
         document.getElementById('qwerty').disabled = false;
     } else {
         document.getElementById('qwerty').disabled = true;
         qwertyButton.classList.add('chosen');
         // document.getElementById("myBtn").disabled = true;
     }
-    // created a variable and put qButton as an arguement?
-    const letterFound = checkLetter(qwertyButton);
-    });
+});
+    // // created a variable and put qButton as an arguement?
+    // const letterFound = checkLetter(qwertyButton);
+    // });
     
 //function that checks if game has been won or lost
 // const checkWin = () => {}
