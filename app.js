@@ -111,10 +111,10 @@ qwerty.addEventListener('click', (e) => {
         qwertyButton.classList.add('chosen');
         // document.getElementById("myBtn").disabled = true;
     }
-});
+
     // // created a variable and put qButton as an arguement?
-    // const letterFound = checkLetter(qwertyButton);
-    // });
+    const letterFound = checkLetter(qwertyButton);
+    });
     
 //function that checks if game has been won or lost
 // const checkWin = () => {}
