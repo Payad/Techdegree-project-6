@@ -70,22 +70,75 @@ qwerty.addEventListener('click', (e) => {
     //     // return click;
     // });
     // const qwertyButton = document.querySelector('#qwerty');
-    button.filter(function(btn_reset) {
+
+    // button.filter(function(btn_reset) {
+
     const button = e.target;
-    const qwertyButton = document.querySelector('#qwerty');
-    });
-    if ('click' !== qwertyButton) {
+    // const qwertyButton = document.querySelector('#qwerty');
+    // const qwertyButton = document.querySelector('.keyrow');
+  
+    if (button.tagName === "BUTTON") {
+    // if ('click' !== qwertyButton) {
     // if (e.target.tagName === 'qwertyButton') {
-        document.getElementById('qwerty').disabled = false;
+        // document.getElementById('qwerty').disabled = false;
+        // document.getElementsByClassName('keyrow').disabled = false;
+        // document.getElementsByTagName('button').disabled = false;
+        button.classList.add('chosen');
+        button.disabled = true;
     } else {
-        document.getElementById('qwerty').disabled = true;
-        qwertyButton.classList.add('chosen');
+        // document.getElementById('qwerty').disabled = true;
+        // document.getElementsByClassName('keyrow').disabled = true;
+        button.disabled = false;
+        // qwertyButton.classList.add('chosen');
+        // keyrow.classList.add('chosen');
         // document.getElementById("myBtn").disabled = true;
-    }
+    
 
     // // created a variable and put qButton as an arguement?
+    }
     const letterFound = checkLetter(button);
+    
+    // trying to remove tries for guesses
+
+    // let tries = document.getElementById('scoreboard');
+    // for (let i = 0; i < tries.length; i += 1) {
+    //     if (letterFound === 'null') {
+            // let parent = img.parentNode.parentNode;
+            // parent.removeChild(img);
+        // }
+            // let parent = tries.parentNode;
+            // parent.removeChild(li.tries);
+
+        let tries = document.getElementsByClassName('tries');
+        for (let i = 0; i < tries.length; i += 1) {
+            if (letterFound === 'null') {
+                let img = document.getElementsByTagName('img');
+                let parent = tries.parentNode.parentNode;
+                parent.removeChild(tries);
+            }
+        }
+        // if (letterFound === 'null') {
+        //     let parent = li.parentNode;
+        //     parent.removeChild(li);
+        // }
+
+    // if (checkLetter !== li) {
+    //     let parent = li.parentNode.parentNode;
+    //     parent.removeChild(li);
+    //     missed += 1;
+    // }
+
+    // or this 
+    // if (checkLetter !== button) {
+    //     let parent = li.parentNode.parentNode;
+    //     parent.removeChild(li);
+    //     missed += 1;
+    // }
+// }
+
     });
+   
+  
     
 //function that checks if game has been won or lost
 // const checkWin = () => {}
