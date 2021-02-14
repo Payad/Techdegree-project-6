@@ -11,11 +11,11 @@ btn_reset.addEventListener('click', (e) => {
 });
 
  const phrases = [
-    'Set up baseCamp or a buffet',
-    'Genetically engineered Tyrannosaur',
-    'The Islands of La Cinco Muertes',
-    'That was not on Ingens list',
-    'The destruction of Isla Nublar',
+    'set up baseCamp or a buffet',
+    'genetically engineered tyrannosaur',
+    'the islands of la cinco muertes',
+    'that was not on ingens list',
+    'the destruction of isla nublar',
 ];
 
 //function that gets a random phrase from array
@@ -36,7 +36,7 @@ function addPhraseToDisplay(arr) {
        let li = document.createElement('li');
        ul.appendChild(li);
        li.textContent = arr[i];
-        if (arr[i] === '') {
+        if (arr[i] === ' ') {
             li.className = 'space';
         } else {
             li.className = 'letter';
@@ -50,7 +50,7 @@ addPhraseToDisplay(phraseArray);
 
 function checkLetter(qwertyButton) {
     let li = document.getElementsByClassName('letter');
-    let match = 'null';
+    let match = null;
 
     for (let i = 0; i < li.length; i += 1) {
         if (li[i].textContent === qwertyButton.textContent) {
@@ -109,24 +109,98 @@ qwerty.addEventListener('click', (e) => {
             // let parent = tries.parentNode;
             // parent.removeChild(li.tries);
 
-        let tries = document.getElementsByClassName('tries');
-        for (let i = 0; i < tries.length; i += 1) {
-            if (letterFound === 'null') {
-                let img = document.getElementsByTagName('img');
-                let parent = tries.parentNode.parentNode;
-                parent.removeChild(tries);
-            }
-        }
-        // if (letterFound === 'null') {
-        //     let parent = li.parentNode;
-        //     parent.removeChild(li);
-        // }
+        //*** */ const img = document.getElementsByTagName('img');
+        // const tries = document.getElementsByClassName('tries');
+        // for (let i = 0; i < tries.length; i += 1) {
+        //     if (letterFound === 'null') {
+        //         // let img = document.getElementsByTagName('img');
+        //         let parent = tries.parentNode.parentNode;
+        //         parent.removeChild(tries);
+        //         missed += 1;
 
-    // if (checkLetter !== li) {
-    //     let parent = li.parentNode.parentNode;
-    //     parent.removeChild(li);
-    //     missed += 1;
-    // }
+            // const tries = document.getElementsByClassName('tries');
+            // const img = document.getElementsByTagName('img');
+
+            // const guesses = document.querySelector('.tries img');
+
+            // for (let i = 0; i < tries.length; i += 1) {
+            //     if (letterFound === 'null') {
+
+                    // const scoreboard = document.getElementById('scoreboard');
+
+                    // tries[i].textContent = letterFound;
+                    // let parent = img.parentNode;
+                    // parent.removeChild(img);
+                    // or parent.removeChild(images/liveHeart.png);
+
+                    // tries[i].removeChild(tries);
+                    // missed += 1;
+            //     }
+                
+            // }
+
+            //style for replacing images in javascript
+
+        //     if (letterFound === null) {
+        //     const imgRep = document.getElementsByClassName('tries');
+        //     // if (tries += 1) {
+        //     imgRep.src = "images/lostHeart.png";
+        //     imgRep.style.visibility = "visible";
+        //     missed += 1;
+        //     } else if (tries += 2) {
+        //         imgRep.src("images/lostHeart.png")[1];
+        //         imgRep.style.visibility = "visible";
+        //         missed += 2;
+        //     } else if (tries += 3) {
+        //         imgRep.src("images/lostHeart")[2];
+        //         imgRep.style.visibility = "visible";
+        //         missed += 3;
+        //     } else if (tries += 4) {
+        //         imgRep.src("images/lostHeart")[3];
+        //         imgRep.style.visibility = "visible";
+        //         missed += 4;
+        //     } else {
+        //     //(tries >= 5) 
+        //         imgRep.src("images/lostHeart")[4];
+        //         imgRep.style.visibilty = "visible";
+        //         missed += 5;
+            
+
+        //     }
+
+        // });
+        const imgRep = document.getElementsByClassName('tries');
+        if (tries =+ 1) {
+            document.getElementsByClassName('tries')[0];
+            imgRep.src = "images/lostHeart.png";
+            imgRep.style.visibility = "visible";
+            missed += 1;
+        } else if (tries += 2) {
+            document.getElementsByClassName('tries')[1];
+            imgRep.src = "images/lostHeart.png";
+            imgRep.style.visibility = "visible";
+            missed += 2;
+        } else if (tries += 3) {
+            document.getElementsByClassName('tries')[2];
+            imgRep.src ="images/lostHeart.png";
+            imgRep.style.visibility = "visible";
+            missed += 3;
+        } else if (tries += 4) {
+            document.getElementsByClassName("tries")[3];
+            imgRep.src = "images/lostHeart.png";
+            imgRep.style.visibility = "visible";
+            missed += 4;
+        } else {
+            document.getElementsByClassName("tries")[4];
+            imgRep.src = "images/lostHeart.png";
+            imgRep.style.visiblity = "visible";
+            missed == 5;
+        }
+        
+    });
+        
+
+   
 
     // or this 
     // if (checkLetter !== button) {
@@ -136,7 +210,7 @@ qwerty.addEventListener('click', (e) => {
     // }
 // }
 
-    });
+    // });
    
   
     
