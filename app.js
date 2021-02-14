@@ -98,35 +98,26 @@ qwerty.addEventListener('click', (e) => {
     }
     const letterFound = checkLetter(button);
     
-    // trying to remove tries for guesses
+    
+                // if (letterFound === null) {
 
-    // let tries = document.getElementById('scoreboard');
-    // for (let i = 0; i < tries.length; i += 1) {
-    //     if (letterFound === 'null') {
-            // let parent = img.parentNode.parentNode;
-            // parent.removeChild(img);
-        // }
-            // let parent = tries.parentNode;
-            // parent.removeChild(li.tries);
+                //     const scoreboard = document.getElementById('scoreboard');
+                //     const ol = scoreboard.firstElementChild;
+                //     const li = ol.firstElementChild;
+                //     ol.removeChild(li);
+                // }
 
-        //*** */ const img = document.getElementsByTagName('img');
-        // const tries = document.getElementsByClassName('tries');
-        // for (let i = 0; i < tries.length; i += 1) {
-        //     if (letterFound === 'null') {
-        //         // let img = document.getElementsByTagName('img');
-        //         let parent = tries.parentNode.parentNode;
-        //         parent.removeChild(tries);
-        //         missed += 1;
-
-            // const tries = document.getElementsByClassName('tries');
-            // const img = document.getElementsByTagName('img');
-
-            // const guesses = document.querySelector('.tries img');
-
-            // for (let i = 0; i < tries.length; i += 1) {
-            //     if (letterFound === 'null') {
-
-                    // const scoreboard = document.getElementById('scoreboard');
+                const imgReplace = document.getElementsByTagName('img');
+                // const tries = document.getELementsByClassName('tries');
+                    
+            if (letterFound === null) {
+                const imgReplace = document.getElementsByTagName('img');
+                imgReplace.src = "images/lostHeart.png";
+                imgReplace.style.visibility = "visible";
+                missed += 1;
+        }
+});
+            
 
                     // tries[i].textContent = letterFound;
                     // let parent = img.parentNode;
@@ -137,81 +128,39 @@ qwerty.addEventListener('click', (e) => {
                     // missed += 1;
             //     }
                 
-            // }
+        
 
             //style for replacing images in javascript
 
-        //     if (letterFound === null) {
-        //     const imgRep = document.getElementsByClassName('tries');
-        //     // if (tries += 1) {
-        //     imgRep.src = "images/lostHeart.png";
-        //     imgRep.style.visibility = "visible";
-        //     missed += 1;
-        //     } else if (tries += 2) {
-        //         imgRep.src("images/lostHeart.png")[1];
-        //         imgRep.style.visibility = "visible";
-        //         missed += 2;
-        //     } else if (tries += 3) {
-        //         imgRep.src("images/lostHeart")[2];
-        //         imgRep.style.visibility = "visible";
-        //         missed += 3;
-        //     } else if (tries += 4) {
-        //         imgRep.src("images/lostHeart")[3];
-        //         imgRep.style.visibility = "visible";
-        //         missed += 4;
-        //     } else {
-        //     //(tries >= 5) 
-        //         imgRep.src("images/lostHeart")[4];
-        //         imgRep.style.visibilty = "visible";
-        //         missed += 5;
-            
-
-        //     }
-
-        // });
-        const imgRep = document.getElementsByClassName('tries');
-        if (tries =+ 1) {
-            document.getElementsByClassName('tries')[0];
-            imgRep.src = "images/lostHeart.png";
-            imgRep.style.visibility = "visible";
-            missed += 1;
-        } else if (tries += 2) {
-            document.getElementsByClassName('tries')[1];
-            imgRep.src = "images/lostHeart.png";
-            imgRep.style.visibility = "visible";
-            missed += 2;
-        } else if (tries += 3) {
-            document.getElementsByClassName('tries')[2];
-            imgRep.src ="images/lostHeart.png";
-            imgRep.style.visibility = "visible";
-            missed += 3;
-        } else if (tries += 4) {
-            document.getElementsByClassName("tries")[3];
-            imgRep.src = "images/lostHeart.png";
-            imgRep.style.visibility = "visible";
-            missed += 4;
-        } else {
-            document.getElementsByClassName("tries")[4];
-            imgRep.src = "images/lostHeart.png";
-            imgRep.style.visiblity = "visible";
-            missed == 5;
-        }
+    //     const imgRep = document.getElementsByClassName('tries');
+    //     if (tries =+ 1) {
+    //         document.getElementsByClassName('tries')[0];
+    //         imgRep.src = "images/lostHeart.png";
+    //         imgRep.style.visibility = "visible";
+    //         missed += 1;
+    //     } else if (tries += 2) {
+    //         document.getElementsByClassName('tries')[1];
+    //         imgRep.src = "images/lostHeart.png";
+    //         imgRep.style.visibility = "visible";
+    //         missed += 2;
+    //     } else if (tries += 3) {
+    //         document.getElementsByClassName('tries')[2];
+    //         imgRep.src ="images/lostHeart.png";
+    //         imgRep.style.visibility = "visible";
+    //         missed += 3;
+    //     } else if (tries += 4) {
+    //         document.getElementsByClassName("tries")[3];
+    //         imgRep.src = "images/lostHeart.png";
+    //         imgRep.style.visibility = "visible";
+    //         missed += 4;
+    //     } else {
+    //         document.getElementsByClassName("tries")[4];
+    //         imgRep.src = "images/lostHeart.png";
+    //         imgRep.style.visiblity = "visible";
+    //         missed == 5;
+    //     }
         
-    });
-        
-
-   
-
-    // or this 
-    // if (checkLetter !== button) {
-    //     let parent = li.parentNode.parentNode;
-    //     parent.removeChild(li);
-    //     missed += 1;
-    // }
-// }
-
     // });
-   
   
     
 //function that checks if game has been won or lost
