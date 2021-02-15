@@ -67,39 +67,14 @@ function checkLetter(qwertyButton) {
 
 // function that checks if button has been clicked
 qwerty.addEventListener('click', (e) => {
-    // let click = button.filter(function(btn_reset) {
-    //     // return click;
-    // });
-    // const qwertyButton = document.querySelector('#qwerty');
-
-    // button.filter(function(btn_reset) {
-
     const button = e.target;
-    // const qwertyButton = document.querySelector('#qwerty');
-    // const qwertyButton = document.querySelector('.keyrow');
-  
     if (button.tagName === "BUTTON") {
-    // if ('click' !== qwertyButton) {
-    // if (e.target.tagName === 'qwertyButton') {
-        // document.getElementById('qwerty').disabled = false;
-        // document.getElementsByClassName('keyrow').disabled = false;
-        // document.getElementsByTagName('button').disabled = false;
         button.classList.add('chosen');
         button.disabled = true;
     } else {
-        // document.getElementById('qwerty').disabled = true;
-        // document.getElementsByClassName('keyrow').disabled = true;
         button.disabled = false;
-        // qwertyButton.classList.add('chosen');
-        // keyrow.classList.add('chosen');
-        // document.getElementById("myBtn").disabled = true;
-    
-
-    // // created a variable and put qButton as an arguement?
     }
     const letterFound = checkLetter(button);
-    
-
 
                 // if (letterFound === null) {
 
@@ -111,17 +86,13 @@ qwerty.addEventListener('click', (e) => {
                
             if (letterFound === null) {
                 const imgReplace = document.getElementsByTagName('img');
-                imgReplace[missed].src = "images/lostHeart.png";
+                imgReplace[missed].src = 'images/lostHeart.png';
                 missed += 1;
         }
 
             checkWin();
     });
 
-
-            
-  
-    
 //function that checks if game has been won or lost
 // const checkWin = () => {
 
