@@ -55,10 +55,11 @@ function checkLetter(qwertyButton) {
     for (let i = 0; i < li.length; i += 1) {
         if (li[i].textContent === qwertyButton.textContent) {
             li[i].classList.add('show');
+            match = li[i].textContent;
         } else {
             li[i].classList.add('null');
         }
-        match = li[i].textContent;
+       
     }
     return match;
 }
@@ -98,7 +99,8 @@ qwerty.addEventListener('click', (e) => {
     }
     const letterFound = checkLetter(button);
     
-    
+
+
                 // if (letterFound === null) {
 
                 //     const scoreboard = document.getElementById('scoreboard');
@@ -106,63 +108,54 @@ qwerty.addEventListener('click', (e) => {
                 //     const li = ol.firstElementChild;
                 //     ol.removeChild(li);
                 // }
-
-                const imgReplace = document.getElementsByTagName('img');
-                // const tries = document.getELementsByClassName('tries');
-                    
+               
             if (letterFound === null) {
                 const imgReplace = document.getElementsByTagName('img');
-                imgReplace.src = "images/lostHeart.png";
-                imgReplace.style.visibility = "visible";
+                imgReplace[missed].src = "images/lostHeart.png";
                 missed += 1;
         }
-});
+
+            checkWin();
+    });
+
+
             
-
-                    // tries[i].textContent = letterFound;
-                    // let parent = img.parentNode;
-                    // parent.removeChild(img);
-                    // or parent.removeChild(images/liveHeart.png);
-
-                    // tries[i].removeChild(tries);
-                    // missed += 1;
-            //     }
-                
-        
-
-            //style for replacing images in javascript
-
-    //     const imgRep = document.getElementsByClassName('tries');
-    //     if (tries =+ 1) {
-    //         document.getElementsByClassName('tries')[0];
-    //         imgRep.src = "images/lostHeart.png";
-    //         imgRep.style.visibility = "visible";
-    //         missed += 1;
-    //     } else if (tries += 2) {
-    //         document.getElementsByClassName('tries')[1];
-    //         imgRep.src = "images/lostHeart.png";
-    //         imgRep.style.visibility = "visible";
-    //         missed += 2;
-    //     } else if (tries += 3) {
-    //         document.getElementsByClassName('tries')[2];
-    //         imgRep.src ="images/lostHeart.png";
-    //         imgRep.style.visibility = "visible";
-    //         missed += 3;
-    //     } else if (tries += 4) {
-    //         document.getElementsByClassName("tries")[3];
-    //         imgRep.src = "images/lostHeart.png";
-    //         imgRep.style.visibility = "visible";
-    //         missed += 4;
-    //     } else {
-    //         document.getElementsByClassName("tries")[4];
-    //         imgRep.src = "images/lostHeart.png";
-    //         imgRep.style.visiblity = "visible";
-    //         missed == 5;
-    //     }
-        
-    // });
   
     
 //function that checks if game has been won or lost
-// const checkWin = () => {}
+// const checkWin = () => {
+
+// }
+// function checkWin() {
+//     document.getElementById('overlay');
+//     const letter = document.getElementsByClassName('letter');
+//     const show = document.getElementsByClassName('show');
+//     if (show.length === letter.length) {
+//         overlay.classList.add("win");
+//         overlay.style.display = "flex";
+//         document.querySelector([title="You Win!!"]);
+//     } else {
+//         overlay.classList.add("lose");
+//         overlay.style.display = "flex";
+//         document.querySelector([title="You Lose"]);
+       
+//     }
+// }
+
+function checkWin() {
+    const letter = document.getElementsByClassName('letter');
+    const show = document.gfetELementByClassName('show');
+    const title = document.querySelector('.title');
+    if (show.length === letter.length) {
+        title.innerHTML = 'You Win!!';
+        overlay.classList.add('win');
+        overlay.style.display = "flex";
+    } else {
+        title.innerHTML = 'You Lose';
+        overlay.classList.add('lose');
+        overlay.style.display = "flex";
+    }
+
+
+    }
 
