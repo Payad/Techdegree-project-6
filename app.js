@@ -90,7 +90,7 @@ qwerty.addEventListener('click', (e) => {
                 missed += 1;
         }
 
-            checkWin();
+            // checkWin();
     });
 
 //function that checks if game has been won or lost
@@ -115,7 +115,7 @@ qwerty.addEventListener('click', (e) => {
 
 function checkWin() {
     const letter = document.getElementsByClassName('letter');
-    const show = document.gfetELementByClassName('show');
+    const show = document.getELementsByClassName('show');
     const title = document.querySelector('.title');
     if (show.length === letter.length) {
         title.innerHTML = 'You Win!!';
