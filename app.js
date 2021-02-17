@@ -1,6 +1,8 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const btn_reset = document.getElementsByClassName('btn__reset')[0];
+// let resetButton = document.getElementById('qwerty').querySelectorAll('button');
+// let resetButton = document.getElementById('qwerty').querySelector('button');
 
 let missed = 0;
 
@@ -10,6 +12,7 @@ btn_reset.addEventListener('click', (e) => {
     overlay.style.display = 'none';
 });
 
+//Phrases
  const phrases = [
     'set up baseCamp or a buffet',
     'genetically engineered tyrannosaur',
@@ -26,11 +29,35 @@ function getRandomPhraseAsArray(arr) {
 getRandomPhraseAsArray(phrases);
 
 
+//add button reset
+    btn_reset.addEventListener('click', () => {
+    //reset missed variable/number of tries
+    missed = 0;
+
+    //reset live hearts
+        let imgReplace = document.getElementsByTagName(img);
+        imgReplace.forEach(imgReplace => {
+            imgReplace.src = 'images/liveHeart.png';
+        });
+
+        //reset phrase UL/clear phrase display
+        const ul = document.querySelector('ul');
+        ul.innerHTML = '';
+
+        //enable qwerty buttons
+        qwerty.forEach(button => {
+            button.removeAttribute('disabled');
+            button.classList.remove('chosen');
+        });
+
+    });
 
 
-//function that adds letters of phrase to display
+
+
+
+//function that adds letters of a phrase to display
 function addPhraseToDisplay(arr) {
-    // console.log(arr);
     const ul = document.querySelector('#phrase ul');
    for (let i = 0; i < arr.length; i += 1) {
        let li = document.createElement('li');
@@ -47,7 +74,7 @@ function addPhraseToDisplay(arr) {
 const phraseArray = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(phraseArray);
 
-
+//a function that checks if letter is correct
 function checkLetter(qwertyButton) {
     let li = document.getElementsByClassName('letter');
     let match = null;
@@ -90,8 +117,38 @@ qwerty.addEventListener('click', (e) => {
                 missed += 1;
         }
 
-            // checkWin();
+        checkWin();
+
+        //function that checks if the game has been won
+function checkWin() {
+    const letter = document.getElementsByClassName('letter');
+    const show = document.getElementsByClassName('show');
+    const title = document.querySelector('.title');
+    if (show.length === letter.length) {
+        //headline showing person won
+        title.innerHTML = 'You guessed the Jurassic Phrase!!';
+        overlay.classList.add('win');
+        overlay.style.display = "flex";
+        //add reset button
+        resetButton.textContent = "Play again?"
+    } else if (missed == 5) {
+        //headline showing person lost
+        title.innerHTML = 'Sorry the phrase is incorrect. Try again?';
+        overlay.classList.add('lose');
+        overlay.style.display = "flex";
+        //add reset button
+        resetButton.textContent = "Try and guess the Jurassic Phrase again?"
+    }
+
+
+    //add reset button
+    // resetButton.textContent = "Try and guess the Jurassic Phrase again?"
+    }
+    // resetButton.textContent = "Try and guess the Jurassic Phrase again?"
+
     });
+
+     // });
 
 //function that checks if game has been won or lost
 // const checkWin = () => {
@@ -112,21 +169,4 @@ qwerty.addEventListener('click', (e) => {
        
 //     }
 // }
-
-function checkWin() {
-    const letter = document.getElementsByClassName('letter');
-    const show = document.getELementsByClassName('show');
-    const title = document.querySelector('.title');
-    if (show.length === letter.length) {
-        title.innerHTML = 'You Win!!';
-        overlay.classList.add('win');
-        overlay.style.display = "flex";
-    } else {
-        title.innerHTML = 'You Lose';
-        overlay.classList.add('lose');
-        overlay.style.display = "flex";
-    }
-
-
-    }
 
