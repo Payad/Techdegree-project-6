@@ -1,14 +1,30 @@
 const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const btn_reset = document.getElementsByClassName('btn__reset')[0];
-// let resetButton = document.getElementById('qwerty').querySelectorAll('button');
-// let resetButton = document.getElementById('qwerty').querySelector('button');
 
 let missed = 0;
 
-
 const overlay = document.getElementById('overlay');
 btn_reset.addEventListener('click', (e) => {
+    missed = 0;
+    //reset live hearts
+    let imgReplace = document.querySelectorAll('.tries img');
+    imgReplace.item(imgReplace => {
+        imgReplace.src = 'images/liveHeart.png';
+    });
+        //reset phrase UL/clear phrase display
+        const ul = document.querySelector('ul');
+        ul.innerHTML = '';
+    
+        // enable qwerty buttons
+        const qwertyButtons = qwerty.querySelectorAll('button');
+        qwertyButtons.forEach(button => {
+            button.removeAttribute('disabled');
+            button.classList.remove('chosen');
+        });
+        const phraseArray = getRandomPhraseAsArray(phrases);
+        addPhraseToDisplay(phraseArray);
+        
     overlay.style.display = 'none';
 });
 
@@ -24,37 +40,8 @@ btn_reset.addEventListener('click', (e) => {
 //function that gets a random phrase from array
 function getRandomPhraseAsArray(arr) {
     return arr[Math.floor(Math.random() * arr.length)].split('');
-
-        }
+}
 getRandomPhraseAsArray(phrases);
-
-
-//add button reset
-    btn_reset.addEventListener('click', () => {
-    //reset missed variable/number of tries
-    missed = 0;
-
-    //reset live hearts
-        let imgReplace = document.getElementsByTagName(img);
-        imgReplace.forEach(imgReplace => {
-            imgReplace.src = 'images/liveHeart.png';
-        });
-
-        //reset phrase UL/clear phrase display
-        const ul = document.querySelector('ul');
-        ul.innerHTML = '';
-
-        //enable qwerty buttons
-        qwerty.forEach(button => {
-            button.removeAttribute('disabled');
-            button.classList.remove('chosen');
-        });
-
-    });
-
-
-
-
 
 //function that adds letters of a phrase to display
 function addPhraseToDisplay(arr) {
@@ -71,8 +58,6 @@ function addPhraseToDisplay(arr) {
     }
 }
 
-const phraseArray = getRandomPhraseAsArray(phrases);
-addPhraseToDisplay(phraseArray);
 
 //a function that checks if letter is correct
 function checkLetter(qwertyButton) {
@@ -130,43 +115,18 @@ function checkWin() {
         overlay.classList.add('win');
         overlay.style.display = "flex";
         //add reset button
-        resetButton.textContent = "Play again?"
+        btn_reset.textContent = "Play again?"
     } else if (missed == 5) {
         //headline showing person lost
         title.innerHTML = 'Sorry the phrase is incorrect. Try again?';
         overlay.classList.add('lose');
         overlay.style.display = "flex";
         //add reset button
-        resetButton.textContent = "Try and guess the Jurassic Phrase again?"
+        btn_reset.textContent = "Try and guess the Jurassic Phrase again?"
     }
 
 
-    //add reset button
-    // resetButton.textContent = "Try and guess the Jurassic Phrase again?"
-    }
-    // resetButton.textContent = "Try and guess the Jurassic Phrase again?"
-
+}
     });
 
-     // });
-
-//function that checks if game has been won or lost
-// const checkWin = () => {
-
-// }
-// function checkWin() {
-//     document.getElementById('overlay');
-//     const letter = document.getElementsByClassName('letter');
-//     const show = document.getElementsByClassName('show');
-//     if (show.length === letter.length) {
-//         overlay.classList.add("win");
-//         overlay.style.display = "flex";
-//         document.querySelector([title="You Win!!"]);
-//     } else {
-//         overlay.classList.add("lose");
-//         overlay.style.display = "flex";
-//         document.querySelector([title="You Lose"]);
-       
-//     }
-// }
-
+     
