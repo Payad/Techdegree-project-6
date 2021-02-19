@@ -9,7 +9,7 @@ btn_reset.addEventListener('click', (e) => {
     missed = 0;
     //reset live hearts
     let imgReplace = document.querySelectorAll('.tries img');
-    imgReplace.item(imgReplace => {
+    imgReplace.forEach(imgReplace => {
         imgReplace.src = 'images/liveHeart.png';
     });
         //reset phrase UL/clear phrase display
@@ -81,12 +81,23 @@ function checkLetter(qwertyButton) {
 qwerty.addEventListener('click', (e) => {
     const button = e.target;
     if (button.tagName === "BUTTON") {
-        button.classList.add('chosen');
-        button.disabled = true;
-    } else {
-        button.disabled = false;
-    }
-    const letterFound = checkLetter(button);
+    button.classList.add('chosen');
+    button.disabled = true;
+} else if (button !== "QWERTYBUTTONS") {
+    missed += 0;
+}
+
+
+
+// qwerty.addEventListener('click', (e) => {
+//     const button = e.target;
+//     if (button.tagName === "BUTTON") {
+//         button.classList.add('chosen');
+//         button.disabled = true;
+//     } else {
+//         button.disabled = false;
+//     }
+//     const letterFound = checkLetter(button);
 
                 // if (letterFound === null) {
 
