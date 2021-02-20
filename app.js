@@ -82,42 +82,24 @@ function checkLetter(qwertyButton) {
 
 // function that checks if button has been clicked
 //  const qwertyDiv = document.querySelectorAll('div > qwerty');
-    const qwertyDiv = document.querySelectorAll('#qwerty');
+    // const qwertyDiv = document.querySelectorAll('#qwerty');
 // keyrow = document.querySelectorAll('.keyrow > button');
+// const letterFound = checkLetter(button);
 qwerty.addEventListener('click', (e) => {
+    // const letterFound = checkLetter(button); 
     const button = e.target;
-    if (button.tagName !== "QWERTYDIV") {
+    const letterFound = checkLetter(button);
     if (button.tagName === "BUTTON") {
     button.classList.add('chosen');
     button.disabled = true;
-    // keyrow = document.querySelectorAll('.keyrow > button');
-} 
-    }
-// else if (keyrow !== "qwerty") {
-//     missed += 0;
-// }
-
-// qwerty.addEventListener('click', (e) => {
-//     const button = e.target;
-//     if (button !== "BUTTON") {
-//     if (button.tagName === "BUTTON") {
-//     button.classList.add('chosen');
-//     button.disabled = true;
-//     // keyrow = document.querySelectorAll('.keyrow > button');
-// } 
-//     }
-// });
-
-   
-   
-     
-   
-
-
-
-    // let keyrow = document.querySelectorAll('.keyrow button');
-    // keyrow.forEach(button => {
-    //     button.
+} if (letterFound === null) {
+    // const letterFound = checkLetter(button);
+    const imgReplace = document.getElementsByTagName('img');
+    imgReplace[missed].src = 'images/lostHeart.png';
+    missed += 1;
+    // const letterFound = checkLetter(button);
+}
+// const letterFound = checkLetter(button);
 
 
 
@@ -129,7 +111,9 @@ qwerty.addEventListener('click', (e) => {
 //     } else {
 //         button.disabled = false;
 //     }
-    const letterFound = checkLetter(button);
+
+
+    // const letterFound = checkLetter(button);
 
                 // if (letterFound === null) {
 
@@ -139,11 +123,11 @@ qwerty.addEventListener('click', (e) => {
                 //     ol.removeChild(li);
                 // }
                
-            if (letterFound === null) {
-                const imgReplace = document.getElementsByTagName('img');
-                imgReplace[missed].src = 'images/lostHeart.png';
-                missed += 1;
-        }
+        //     if (letterFound === null) {
+        //         const imgReplace = document.getElementsByTagName('img');
+        //         imgReplace[missed].src = 'images/lostHeart.png';
+        //         missed += 1;
+        // }
 
         checkWin();
 
