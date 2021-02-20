@@ -85,6 +85,31 @@ function checkLetter(qwertyButton) {
     // const qwertyDiv = document.querySelectorAll('#qwerty');
 // keyrow = document.querySelectorAll('.keyrow > button');
 // const letterFound = checkLetter(button);
+
+// qwerty.addEventListener('click', (e) => {
+//     const letterFound = checkLetter(button); 
+//     if (letterFound === null) {
+//         // const letterFound = checkLetter(button);
+//         const imgReplace = document.getElementsByTagName('img');
+//         imgReplace[missed].src = 'images/lostHeart.png';
+//         missed += 1;
+//         // const letterFound = checkLetter(button);
+//         const button = e.target;
+//  } if (button.tagName === "BUTTON") {
+//     // const button = e.target;
+//     button.classList.add('chosen');
+//     button.disabled = true;
+// } if (letterFound === null) {
+//     // const letterFound = checkLetter(button);
+//     const imgReplace = document.getElementsByTagName('img');
+//     imgReplace[missed].src = 'images/lostHeart.png';
+//     missed += 1;
+//     // const letterFound = checkLetter(button);
+// }
+
+
+
+
 qwerty.addEventListener('click', (e) => {
     // const letterFound = checkLetter(button); 
     const button = e.target;
@@ -99,7 +124,7 @@ qwerty.addEventListener('click', (e) => {
     missed += 1;
     // const letterFound = checkLetter(button);
 }
-// const letterFound = checkLetter(button);
+const letterFound = checkLetter(button);
 
 
 
