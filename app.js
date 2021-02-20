@@ -79,66 +79,22 @@ function checkLetter(qwertyButton) {
     return match;
 }
 
-
-// function that checks if button has been clicked
-//  const qwertyDiv = document.querySelectorAll('div > qwerty');
-    // const qwertyDiv = document.querySelectorAll('#qwerty');
-// keyrow = document.querySelectorAll('.keyrow > button');
-// const letterFound = checkLetter(button);
-
-// qwerty.addEventListener('click', (e) => {
-//     const letterFound = checkLetter(button); 
-//     if (letterFound === null) {
-//         // const letterFound = checkLetter(button);
-//         const imgReplace = document.getElementsByTagName('img');
-//         imgReplace[missed].src = 'images/lostHeart.png';
-//         missed += 1;
-//         // const letterFound = checkLetter(button);
-//         const button = e.target;
-//  } if (button.tagName === "BUTTON") {
-//     // const button = e.target;
-//     button.classList.add('chosen');
-//     button.disabled = true;
-// } if (letterFound === null) {
-//     // const letterFound = checkLetter(button);
-//     const imgReplace = document.getElementsByTagName('img');
-//     imgReplace[missed].src = 'images/lostHeart.png';
-//     missed += 1;
-//     // const letterFound = checkLetter(button);
-// }
-
-
-
-
-qwerty.addEventListener('click', (e) => {
-    // const letterFound = checkLetter(button); 
+qwerty.addEventListener('click', (e) => { 
     const button = e.target;
     const letterFound = checkLetter(button);
     if (button.tagName === "BUTTON") {
     button.classList.add('chosen');
     button.disabled = true;
-} if (letterFound === null) {
-    // const letterFound = checkLetter(button);
+    if (letterFound === null) {
     const imgReplace = document.getElementsByTagName('img');
     imgReplace[missed].src = 'images/lostHeart.png';
     missed += 1;
-    // const letterFound = checkLetter(button);
+    } 
 }
-const letterFound = checkLetter(button);
+    checkWin();
 
-
-
-// qwerty.addEventListener('click', (e) => {
-//     const button = e.target;
-//     if (button.tagName === "BUTTON") {
-//         button.classList.add('chosen');
-//         button.disabled = true;
-//     } else {
-//         button.disabled = false;
-//     }
-
-
-    // const letterFound = checkLetter(button);
+});
+// const letterFound = checkLetter(button);
 
                 // if (letterFound === null) {
 
@@ -154,7 +110,7 @@ const letterFound = checkLetter(button);
         //         missed += 1;
         // }
 
-        checkWin();
+        // checkWin();
 
         //function that checks if the game has been won
 function checkWin() {
@@ -163,22 +119,24 @@ function checkWin() {
     const title = document.querySelector('.title');
     if (show.length === letter.length) {
         //headline showing person won
-        title.innerHTML = 'You guessed the Jurassic Phrase!!';
+        // title.innerHTML = 'You guessed the Jurassic Phrase!!';
+        title.innerHTML = 'Clever Girl!!';
         overlay.classList.add('win');
         overlay.style.display = "flex";
         //add reset button
         btn_reset.textContent = "Play again?"
     } else if (missed == 5) {
         //headline showing person lost
-        title.innerHTML = 'Sorry the phrase is incorrect. Try again?';
+        // title.innerHTML = 'Sorry the phrase is incorrect. Try again?';
+        title.innerHTML = 'Remind me to thank John for a lovely weekend!';
         overlay.classList.add('lose');
         overlay.style.display = "flex";
         //add reset button
-        btn_reset.textContent = "Try and guess the Jurassic Phrase again?"
+        btn_reset.textContent = "Try again?"
     }
 
 
 }
-    });
+   
 
      
