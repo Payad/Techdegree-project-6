@@ -2,6 +2,7 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const btn_reset = document.getElementsByClassName('btn__reset')[0];
 
+
 let missed = 0;
 
 const overlay = document.getElementById('overlay');
@@ -21,6 +22,8 @@ btn_reset.addEventListener('click', (e) => {
         qwertyButtons.forEach(button => {
             button.removeAttribute('disabled');
             button.classList.remove('chosen');
+           //not sure if button.disabled is correct or in the right place?
+            button.disabled = false;
         });
         const phraseArray = getRandomPhraseAsArray(phrases);
         addPhraseToDisplay(phraseArray);
@@ -30,7 +33,7 @@ btn_reset.addEventListener('click', (e) => {
 
 //Phrases
  const phrases = [
-    'set up baseCamp or a buffet',
+    'set up basecamp or a buffet',
     'genetically engineered tyrannosaur',
     'the islands of la cinco muertes',
     'that was not on ingens list',
@@ -78,14 +81,43 @@ function checkLetter(qwertyButton) {
 
 
 // function that checks if button has been clicked
+//  const qwertyDiv = document.querySelectorAll('div > qwerty');
+    const qwertyDiv = document.querySelectorAll('#qwerty');
+// keyrow = document.querySelectorAll('.keyrow > button');
 qwerty.addEventListener('click', (e) => {
     const button = e.target;
+    if (button.tagName !== "QWERTYDIV") {
     if (button.tagName === "BUTTON") {
     button.classList.add('chosen');
     button.disabled = true;
-} else if (button !== "QWERTYBUTTONS") {
-    missed += 0;
-}
+    // keyrow = document.querySelectorAll('.keyrow > button');
+} 
+    }
+// else if (keyrow !== "qwerty") {
+//     missed += 0;
+// }
+
+// qwerty.addEventListener('click', (e) => {
+//     const button = e.target;
+//     if (button !== "BUTTON") {
+//     if (button.tagName === "BUTTON") {
+//     button.classList.add('chosen');
+//     button.disabled = true;
+//     // keyrow = document.querySelectorAll('.keyrow > button');
+// } 
+//     }
+// });
+
+   
+   
+     
+   
+
+
+
+    // let keyrow = document.querySelectorAll('.keyrow button');
+    // keyrow.forEach(button => {
+    //     button.
 
 
 
@@ -97,7 +129,7 @@ qwerty.addEventListener('click', (e) => {
 //     } else {
 //         button.disabled = false;
 //     }
-//     const letterFound = checkLetter(button);
+    const letterFound = checkLetter(button);
 
                 // if (letterFound === null) {
 
