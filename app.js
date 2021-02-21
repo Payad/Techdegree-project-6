@@ -121,7 +121,7 @@ function checkWin() {
         //headline showing person won
         // title.innerHTML = 'You guessed the Jurassic Phrase!!';
         title.innerHTML = 'Clever Girl!!';
-        overlay.classList.add('win');
+        overlay.className = 'win';
         overlay.style.display = "flex";
         //add reset button
         btn_reset.textContent = "Play again?"
@@ -129,7 +129,7 @@ function checkWin() {
         //headline showing person lost
         // title.innerHTML = 'Sorry the phrase is incorrect. Try again?';
         title.innerHTML = 'Remind me to thank John for a lovely weekend!';
-        overlay.classList.add('lose');
+        overlay.className = 'lose';
         overlay.style.display = "flex";
         //add reset button
         btn_reset.textContent = "Try again?"
